@@ -14,8 +14,7 @@
     },
     "dependencies": {
         "xmlrpc": "1.0.2",
-        "sax": "0.4.x",
-        "xmlbuilder": "0.3.1"
+	"node-xml": "1.0.2"
     }
 
 }
