@@ -14,7 +14,6 @@ var parser = new xml.SaxParser(function (cb) {
     current = elem;
   });
   cb.onEndElementNS(function (elem, prefix, uri) {
-    
   });
   cb.onCharacters(function (chars) {
     if (chars !== '') {
