@@ -1,29 +1,12 @@
-var xml = require('node-xml');
+var select = require('xpath.js');
+var dom = require('xmldom');
 
-var host = {};
+var xml = "<book><title>Harry Potter</title><title>Voldmod</title></book>";
+var doc = new dom.DOMParser().parseFromString(xml);
 
-var parser = new xml.SaxParser(function (cb) {
-  var current;
-  cb.onStartDocument(function () {
-    console.log('start to parse xml document');
-  });
-  cb.onEndDocument(function () {
-    console.log('finish the xml document parsing');
-  });
-  cb.onStartElementNS(function (elem, attrs, prefix, uri, namespaces) {
-    current = elem;
-  });
-  cb.onEndElementNS(function (elem, prefix, uri) {
-  });
-  cb.onCharacters(function (chars) {
-    if (chars !== '') {
-      host[current] = chars;
-    }
-  });
-});
+var nodes = select(doc, "//title");
 
-parser.parseFile('host.xml');
-
-setTimeout(function () {
-  console.log(host);
-}, 5000);
+for (var i in nodes) {
+  console.log(nodes[i].localName + ": " + nodes[i].firstChild.data);
+  console.log("node: " + nodes[i].toString());  
+}
