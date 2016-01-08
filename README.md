@@ -1,7 +1,7 @@
 nodejs-opennebula
 =================
 
-OpenNebula Cloud API for nodejs, but this is *Not Maintained*, since OpenNebula official support js library is [here](https://github.com/OpenNebula/addon-nodejs).
+OpenNebula Cloud API for nodejs, but this is **Not Maintained**, since OpenNebula **official support js library is [here](https://github.com/OpenNebula/addon-nodejs)**.
 
 
 Installation
